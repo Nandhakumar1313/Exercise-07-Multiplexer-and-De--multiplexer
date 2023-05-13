@@ -74,9 +74,9 @@ RegisterNumber: 212222100029
 module mux(i0, i1, i2, i3, s0, s1, y);
 input i0, i1, i2, i3, s0, s1;
 output y;
+wire p, q, r, s, s0c, s1c;
 not(s0c, s0);
 nor(s1c, s1);
-wire p, q, r, s, s0c, s1c;
 and(p, s0c, s1c, i0);
 and(q, s0c, s1, i1);
 and(r, s0, s1c, i2);
