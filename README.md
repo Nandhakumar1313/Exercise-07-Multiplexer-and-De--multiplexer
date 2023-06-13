@@ -123,8 +123,9 @@ endmodule
 ![238153584-99b66265-558a-4181-ad09-245adf3b9ff7](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/755fbb67-c518-4c3b-9e4a-113a3bfeddb7)
 
 ### DEMULTIPLEXER
+![244848574-69fb5ba2-adf3-48d5-b8c0-ffff79ddac2f](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/79890cec-73d6-4fc5-9276-9a99a2d1ad21)
 
-![Uploading 244848574-69fb5ba2-adf3-48d5-b8c0-ffff79ddac2f.png…]()
+
 
 
 ### TRUTH TABLE 
