@@ -71,32 +71,33 @@ RegisterNumber: 212222100029
 ```
 ### 4-1 MULTIPLEXER
 ```
-module mux(i0, i1, i2, i3, s0, s1, y);
-input i0, i1, i2, i3, s0, s1;
+module mul (s0,s1,a0,a1,a2,a3,y);
+input a0,a1,a2,a3,s0,s1;
 output y;
-wire p, q, r, s, s0c, s1c;
-not(s0c, s0);
-nor(s1c, s1);
-and(p, s0c, s1c, i0);
-and(q, s0c, s1, i1);
-and(r, s0, s1c, i2);
-and(s, s0, s1, i3);
-or(y, p, q, r, s);
+wire a,b,c,d,s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (a,s0,s1,a3);
+and (b,s0bar,s1,a2);
+and (c,s0,s1bar,a1);
+and (d,s0bar,s1bar,a0);
+or (y,a,b,c,d);
 endmodule
 ```
 ### 1-4 DEMULTIPLEXER
 ```
-module demux(y0, y1, y2, y3, s0, s1, i);
-input s0, s1, i;
-output y0, y1, y2, y3;
-wire s0c, s1c;
-nor(s0c, s0);
-nor(s1c, s1);
-and(y0, i, s0c, s1);
-and(y1, i, s0c, s1c);
-and(y2, i, s0, s1c);
-and(y3, i, s0, s1);
+module de (i,s0,s1,y0,y1,y2,y3);
+input s0,s1,i;
+output y0,y1,y2,y3;
+wire s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (y3,i,s1,s0);
+and (y2,i,s1,s0bar);
+and (y1,i,s1bar,s0);
+and (y0,i,s1bar,s0bar);
 endmodule
+
 ```
 
 
@@ -107,20 +108,23 @@ endmodule
 ### RTL LOGIC 
 
 ### MULTIPLEXER
-![mux_rtl](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/b3de7f27-0b4e-4a63-839f-9055811f5a93)
+![238153542-2a2b0ff6-856d-4f1d-ba1a-a2220fb3ac9b](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/f52fef1d-d999-4742-9816-7425e4e590d8)
+
 
 ### DEMULTIPLEXER
-![demux_rtl](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/4fa4dc0f-059a-470c-8ab3-7d0bb8d1f133)
+![238153555-f73f40d3-e774-46d7-998f-4e56adc10232](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/c9403d37-838f-4400-94f9-44a2d48a5c40)
+
 
 
 
 
 ### TIMING DIGRAMS 
 ### MULTIPLEXER
-![mux_td](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/4de6487e-4e0e-46ee-809d-f2d30b496d92)
+![238153584-99b66265-558a-4181-ad09-245adf3b9ff7](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/755fbb67-c518-4c3b-9e4a-113a3bfeddb7)
 
 ### DEMULTIPLEXER
-![demux_td](https://github.com/Nandhakumar1313/Exercise-07-Multiplexer-and-De--multiplexer/assets/120230694/cf56d324-0b6d-4689-b74d-4c6a3aef04d9)
+
+![Uploading 244848574-69fb5ba2-adf3-48d5-b8c0-ffff79ddac2f.png…]()
 
 
 ### TRUTH TABLE 
